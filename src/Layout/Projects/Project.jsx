@@ -17,7 +17,7 @@ function Project() {
         "Smooth animations and transitions",
       ],
       githubLink: "https://github.com/Ganesh9318/portfolio",
-      // liveLink: "https://your-portfolio-url.com",
+      liveLink: " https://ganesh9318.github.io/my-portfolio/",
       // image: "/images/portfolio-preview.png",
     },
     // Add more projects here
@@ -58,13 +58,13 @@ function Project() {
                 >
                   <i className="fab fa-github"></i> View Code
                 </a>
-                {/* <a
+                <a
                   href={project.liveLink}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <i className="fas fa-external-link-alt"></i> Live Demo
-                </a> */}
+                </a>
               </div>
             </div>
           </div>
