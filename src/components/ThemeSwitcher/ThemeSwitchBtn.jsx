@@ -3,29 +3,27 @@ import "./ThemeSwitch.css";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleTheme } from "../../Redux/Slices/ThemeSlice";
 import { FaSun, FaMoon } from "react-icons/fa";
+import { useEffect } from "react";
 
 function ThemeSwitchBtn() {
-  const mode = useSelector((state) => state.Theme.currentTheme[0].mode);
+  const mode = useSelector((state) => state.ThemeMode.ThemeMode);
   console.log(mode);
 
-  const Dispatch = useDispatch();
-  const body = document.body;
+  const dispatch = useDispatch();
 
-  function handleThemeMode() {
-    Dispatch(toggleTheme());
-    if (mode === "dark") {
-      body.style.backgroundColor = "#000";
-      body.style.color = "#fff";
-    } else {
-      body.style.backgroundColor = "#fff";
-      body.style.color = "#000";
-    }
-  }
+  useEffect(() => {
+    document.body.classList.toggle("dark", mode === "dark");
+  }, [mode]);
 
   return (
     <div>
-      <button onClick={handleThemeMode} className="ThemeBtn">
-        {mode === "dark" ? <FaSun /> : <FaMoon />}
+      <button
+        onClick={() => dispatch(toggleTheme())}
+        className="ThemeBtn"
+        aria-label="Toggle Theme"
+        title="Toggle Theme"
+      >
+        {mode === "dark" ? <FaMoon /> : <FaSun />}
       </button>
     </div>
   );

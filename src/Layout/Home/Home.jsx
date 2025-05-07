@@ -1,5 +1,6 @@
 import React from "react";
 import "./Home.css";
+import { Link } from "react-router";
 
 function Home() {
   return (
@@ -10,9 +11,9 @@ function Home() {
             Hello, I'm <span>GANESH KUMAR</span>
           </h1>
           <p>A passionate developer crafting web experiences.</p>
-          <a href="/projects" className="btn">
+          <Link to="/projects" className="btn">
             View My Work
-          </a>
+          </Link>
         </div>
       </section>
     </main>
